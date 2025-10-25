@@ -75,7 +75,7 @@ function App() {
     }
     
     if (password.length < 6) {
-      setError('Password must be at least 6 characters');
+      setError('Invalid email or password');
       return;
     }
     
@@ -340,7 +340,11 @@ function App() {
                     Edit
                   </button>
                 ) : (
-                  <button style={styles.disabledButton} disabled>
+                  <button 
+                    style={styles.disabledButton} 
+                    disabled
+                    data-testid={`view-only-${i}`}
+                  >
                     View Only
                   </button>
                 )}
